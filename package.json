@@ -2,10 +2,13 @@
   "name": "properties-and-events",
   "description": "Convenience method for adding properties and events with fluent api to objects",
   "version": "0.0.4",
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sellerengine/properties-and-events.git"
+    "url": "https://github.com/lukebarlow/properties-and-events.git"
   },
   "files": [
     "dist",
@@ -14,6 +17,7 @@
   ],
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "jasmine ./src/specs/",
     "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
