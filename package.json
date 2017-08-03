@@ -1,0 +1,33 @@
+{
+  "name": "properties-and-events",
+  "description": "Convenience method for adding properties and events with fluent api to objects",
+  "version": "0.0.4",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sellerengine/properties-and-events.git"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "src"
+  ],
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "test": "jasmine ./src/specs/",
+    "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "prepublish": "npm run test && npm run build"
+  },
+  "dependencies": {
+    "d3-dispatch": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2017": "^6.14.0",
+    "cross-env": "^2.0.1",
+    "jasmine-es6": "^0.3.1"
+  }
+}
