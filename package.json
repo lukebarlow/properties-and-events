@@ -16,8 +16,6 @@
     "src"
   ],
   "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
-  "module": "src/index.js",
   "scripts": {
     "test": "jasmine ./src/specs/",
     "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
