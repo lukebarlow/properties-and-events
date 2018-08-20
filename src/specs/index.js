@@ -1,4 +1,4 @@
-import { addProperties, addGetters, addEvents } from '../'
+import { addProperties, addGetters, addEvents, addAnyEvents } from '../'
 
 describe('addProperties', () => {
   it('create an object with fluent properties', () => {
@@ -54,6 +54,52 @@ describe('addEvents', () => {
       constructor () {
         addEvents(this, 'change')
         addEvents(this, 'load')
+      }
+
+      changeSomething () {
+        this.fire('change')
+      }
+
+      load () {
+        this.fire('load')
+      }
+    }
+    const o = new O()
+
+    const spy = jasmine.createSpy('spy')
+    o.on('change', spy)
+    o.changeSomething()
+    expect(spy.calls.count()).toEqual(1)
+
+    const spy2 = jasmine.createSpy('spy2')
+    o.on('load', spy2)
+    o.load()
+    expect(spy2.calls.count()).toEqual(1)
+  })
+})
+
+describe('addAnyEvents', () => {
+  it('allows you to add events to object at any time', () => {
+    class O {
+      constructor () {
+        addAnyEvents(this)
+      }
+
+      changeSomething () {
+        this.fire('change')
+      }
+    }
+    const o = new O()
+    const spy = jasmine.createSpy('spy')
+    o.on('change', spy)
+    o.changeSomething()
+    expect(spy.calls.count()).toEqual(1)
+  })
+
+  it('add events in two separate places to build up multiple events', () => {
+    class O {
+      constructor () {
+        addAnyEvents(this)
       }
 
       changeSomething () {

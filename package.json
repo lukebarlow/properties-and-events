@@ -19,17 +19,19 @@
   "scripts": {
     "test": "jasmine ./src/specs/",
     "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "prepublish": "npm run test && npm run build"
+    "prepublish": "npm run test && npm run build",
+    "standard": "standard --env jasmine",
+    "standard:fix": "standard --env jasmine --fix"
   },
   "dependencies": {
-    "d3-dispatch": "^1.0.1"
+    "d3-dispatch": "^1.0.3"
   },
   "devDependencies": {
-    "babel-core": "^6.14.0",
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2017": "^6.14.0",
-    "cross-env": "^2.0.1",
-    "jasmine-es6": "^0.3.1"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0",
+    "jasmine-es6": "^0.4.3",
+    "standard": "^11.0.1"
   }
 }
