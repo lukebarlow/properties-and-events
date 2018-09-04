@@ -1,7 +1,7 @@
 {
   "name": "properties-and-events",
   "description": "Convenience methods for adding properties and events with fluent api to objects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
