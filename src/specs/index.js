@@ -122,6 +122,22 @@ describe('addAnyEvents', () => {
     o.load()
     expect(spy2.calls.count()).toEqual(1)
   })
+
+  it('does not throw if you fire an event with no listeners', () => {
+    class O {
+      constructor () {
+        addAnyEvents(this)
+      }
+
+      changeSomething () {
+        this.fire('change')
+      }
+    }
+    const o = new O()
+    const spy = jasmine.createSpy('spy')
+    o.changeSomething()
+    expect(spy.calls.count()).toEqual(0)
+  })
 })
 
 export default {}

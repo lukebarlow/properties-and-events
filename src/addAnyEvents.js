@@ -25,6 +25,9 @@ export default function (object) {
   }
 
   object.fire = function (type, ...args) {
-    dispatchersByEventName[eventName(type)].call(type, object, ...args)
+    const dispatcher = dispatchersByEventName[eventName(type)]
+    if (dispatcher) {
+      dispatcher.call(type, object, ...args)
+    }
   }
 }
