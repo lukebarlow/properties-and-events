@@ -15,15 +15,17 @@
     "lib",
     "src"
   ],
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "prepublish": "npm run test"
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run build && npm run test"
   },
   "dependencies": {
     "d3-dispatch": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "babel-jest": "^26.5.2",
