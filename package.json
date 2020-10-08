@@ -15,23 +15,18 @@
     "lib",
     "src"
   ],
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "jasmine ./src/specs/",
-    "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "prepublish": "npm run test && npm run build",
-    "standard": "standard --env jasmine",
-    "standard:fix": "standard --env jasmine --fix"
+    "test": "jest",
+    "prepublish": "npm run test"
   },
   "dependencies": {
-    "d3-dispatch": "^1.0.3"
+    "d3-dispatch": "^2.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "cross-env": "^5.2.0",
-    "jasmine-es6": "^0.4.3",
-    "standard": "^11.0.1"
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.5.2",
+    "jest": "^26.5.2"
   }
 }

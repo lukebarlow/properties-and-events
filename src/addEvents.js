@@ -12,15 +12,15 @@ export default function (object, ...events) {
 
   // if we're trying to add an event which already exists, then
   // throw an error
-  for (let event of events) {
+  for (const event of events) {
     if (Object.keys(dispatchersByEventName).includes(event)) {
       throw new Error('Trying to add event twice - ' + event)
     }
   }
 
-  let dispatcher = dispatch.apply(null, events)
+  const dispatcher = dispatch.apply(null, events)
 
-  for (let event of events) {
+  for (const event of events) {
     dispatchersByEventName[event] = dispatcher
   }
 

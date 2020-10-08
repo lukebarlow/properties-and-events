@@ -1,3 +1,5 @@
+/* global describe it expect jasmine */
+
 import { addProperties, addGetters, addEvents, addAnyEvents } from '../'
 
 describe('addProperties', () => {

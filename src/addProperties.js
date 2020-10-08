@@ -1,7 +1,7 @@
 // adds fluent style getter/setter methods to an object
 // for the given list of properties
 
-let getterSetter = (object, key) => {
+const getterSetter = (object, key) => {
   return function (value) {
     if (arguments.length === 0) {
       return object[key]
@@ -11,7 +11,7 @@ let getterSetter = (object, key) => {
   }
 }
 
-let getter = (object, key) => {
+const getter = (object, key) => {
   return () => {
     return object[key]
   }
